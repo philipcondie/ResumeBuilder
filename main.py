@@ -6,13 +6,15 @@ from config import DATA_DIR, TEMPLATES_DIR, OUTPUT_DIR
 prompt = Prompt(
     prompt_template_filename="prompt.j2",
     experience_path= DATA_DIR / "sample.json",
-    description_path= DATA_DIR / "jobs/test.txt"
+    description_path= DATA_DIR / "jobs/test.txt",
+    system_prompt_path= TEMPLATES_DIR / "system_prompt.md"
 )
 
-prompt = prompt.generate_prompt()
+user_message = prompt.generate_prompt()
+system_prompt = prompt.get_system_prompt()
 
-llm = LLM()
-output = llm.send_message(prompt)
+llm = LLM(system_prompt)
+output = llm.send_message(user_message)
 
 renderer = Render(
     template_dir=TEMPLATES_DIR,

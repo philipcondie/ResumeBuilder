@@ -8,11 +8,13 @@ class Prompt:
     def __init__(self,
                 prompt_template_filename: str,
                 experience_path: Path,
-                description_path: Path
+                description_path: Path,
+                system_prompt_path: Path
             ):
         self.prompt_template_file = prompt_template_filename
         self.experience_path= experience_path
         self.description_path = description_path
+        self.system_prompt_path = system_prompt_path
 
         self.jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
         self.jinja_template = self.jinja_env.get_template(prompt_template_filename)
@@ -36,3 +38,12 @@ class Prompt:
         }
         # render template
         return self.jinja_template.render(**data)
+    
+    def get_system_prompt(self):
+        try:
+            with open(self.system_prompt_path, mode='r', encoding='utf-8') as sys_file:
+                return sys_file.read()
+        except FileNotFoundError:
+            print(f"Error: The file '{self.system_prompt_path}' was not found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")

@@ -1,7 +1,11 @@
-from pydantic import BaseModel
-
+from pydantic import BaseModel, Field
+from typing import Optional
 # class for the structured output from the model and input to the resume template
 class ResumeData(BaseModel):
+    summary: str
+    languages: str
+    ml_ai: Optional[str]
+    tools_frameworks: str
     addsalt: list[str]
     chevron_tech_service: list[str]
     chevron_process_design: list[str]
