@@ -20,7 +20,7 @@ renderer = Render(
     template_dir=TEMPLATES_DIR,
     template_filename="base_template.html",
     output_dir=OUTPUT_DIR,
-    output_filename="test_1"
+    output_filename="test_2"
 )
 
 renderer.generate_resume(output)

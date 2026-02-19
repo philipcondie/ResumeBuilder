@@ -5,6 +5,17 @@ import datetime
 
 BASE_DIR = Path(__file__).resolve().parent / "output"
 
+def get_filename_counter(directory: Path, filename: str):
+    stem = Path(filename).stem
+    suffix = Path(filename).suffix
+    candidate_path = directory / filename
+    counter = 0
+    while candidate_path.exists():
+        candidate_path = directory / f"{stem}_{counter}{suffix}"
+        counter += 1
+
+    return counter
+
 class Render:
     def __init__(self, 
                 template_dir: Path,
@@ -19,6 +30,15 @@ class Render:
         # set up file management (html, pdf)
         self.output_dir = Path(output_dir) if output_dir else BASE_DIR
         self.output_filename = output_filename or ( "resume_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
+        if output_filename:
+            # check for if the pdf or html extension has the higher file counter
+            html_counter = get_filename_counter(self.output_dir, f"{output_filename}.html")
+            pdf_counter = get_filename_counter(self.output_dir, f"{output_filename}.pdf")
+            file_counter = max(html_counter, pdf_counter)
+            self.output_filename = f"{output_filename}_{file_counter}" if file_counter else output_filename
+        else:
+            self.output_filename = "resume_" + datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    
         self.html_path = self.output_dir / f"{self.output_filename}.html"
         self.pdf_path = self.output_dir / f"{self.output_filename}.pdf"
 
