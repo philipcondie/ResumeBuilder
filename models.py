@@ -24,5 +24,12 @@ class JobEntry(BaseModel):
     end_date: str
     experience_items: list[ExperienceItem]
 
+class Skills(BaseModel):
+    languages: list[str]
+    ml_ai: list[str]
+    tools_frameworks: list[str]
+
 class JobHistory(BaseModel):
+    general_information: str
+    skills: Skills
     job_history: list[JobEntry]
