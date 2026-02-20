@@ -2,7 +2,7 @@ import argparse
 import subprocess
 import sys
 
-from render import Render
+from render import Render, rerender_pdf
 from llm import LLM
 from prompt import Prompt
 from config import DATA_DIR, TEMPLATES_DIR, OUTPUT_DIR
@@ -16,15 +16,29 @@ def main():
     parser = argparse.ArgumentParser(description="CLI for generating custom tailored resumes")
     parser.add_argument("job_name", help='Job identifier (e.g. acme_corp_swe)') # used for output filenames
     parser.add_argument("--jd-file", help="Name of existing job description file")
+    parser.add_argument(
+        "--pdf-only",
+        nargs="?",
+        const=True,
+        default=None,
+        help="Recreate pdf file for job_name")
     args = parser.parse_args()
+
+    if args.pdf_only is not None:
+        if args.pdf_only is True:
+            html_name = args.job_name
+        else:
+            html_name = args.pdf_only
+        rerender_pdf(OUTPUT_DIR, html_name)
+        return
 
     # create jd file path
     jd_path = DATA_DIR / "jobs" / f"{args.job_name}.txt"
 
-
     # check for existing jd file 
     if args.jd_file:
-        if (DATA_DIR / "jobs" / args.jd_file).exists():
+        file_path = DATA_DIR / "jobs" / args.jd_file
+        if file_path.exists():
             prompt = Prompt(
                 prompt_template_dir=TEMPLATES_DIR,
                 prompt_template_filename="prompt.j2",
@@ -32,6 +46,8 @@ def main():
                 description_path= DATA_DIR / "jobs" / args.jd_file,
                 system_prompt_path= TEMPLATES_DIR / "system_prompt.md"
             )
+        else: 
+            print('Error: JD not found at {file_path}')
     elif jd_path.exists():
         print(f'Found existing JD at {jd_path}, using it.')
         prompt =  Prompt(

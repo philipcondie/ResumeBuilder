@@ -17,6 +17,28 @@ def get_filename_counter(directory: Path, filename: str):
 
     return counter
 
+def rerender_pdf(output_dir: Path, filename:str):
+        html_path = output_dir / f"{filename}.html"
+        pdf_path = output_dir / f"{filename}.pdf"
+        try:
+            with sync_playwright() as p:
+                browser = p.chromium.launch()
+                page = browser.new_page()
+                page.goto(html_path.as_uri(), wait_until="networkidle")
+                page.pdf(
+                    path=pdf_path,
+                    format="Letter",
+                    margin={"top": "0", "right": "0", "bottom": "0", "left": "0"},
+                    page_ranges="1",
+                    print_background=True
+                )
+                browser.close()
+
+        except FileNotFoundError:
+            print(f"Error: The file '{html_path}' was not found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
 class Render:
     def __init__(self,
                 template_dir: Path,
@@ -71,28 +93,6 @@ class Render:
 
         except FileNotFoundError:
             print(f"Error: The file '{self.html_path}' was not found.")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    def rerender_pdf(self, dir:Path, filename:str):
-        html_path = dir / f"{filename}.html"
-        pdf_path = dir / f"{filename}.pdf"
-        try:
-            with sync_playwright() as p:
-                browser = p.chromium.launch()
-                page = browser.new_page()
-                page.goto(html_path.as_uri(), wait_until="networkidle")
-                page.pdf(
-                    path=pdf_path,
-                    format="Letter",
-                    margin={"top": "0", "right": "0", "bottom": "0", "left": "0"},
-                    page_ranges="1",
-                    print_background=True
-                )
-                browser.close()
-
-        except FileNotFoundError:
-            print(f"Error: The file '{html_path}' was not found.")
         except Exception as e:
             print(f"An error occurred: {e}")
 
