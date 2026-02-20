@@ -26,6 +26,7 @@ def main():
     if args.jd_file:
         if (DATA_DIR / "jobs" / args.jd_file).exists():
             prompt = Prompt(
+                prompt_template_dir=TEMPLATES_DIR,
                 prompt_template_filename="prompt.j2",
                 experience_path= DATA_DIR / "sample.json",
                 description_path= DATA_DIR / "jobs" / args.jd_file,
@@ -34,6 +35,7 @@ def main():
     elif jd_path.exists():
         print(f'Found existing JD at {jd_path}, using it.')
         prompt =  Prompt(
+            prompt_template_dir=TEMPLATES_DIR,
             prompt_template_filename="prompt.j2",
             experience_path= DATA_DIR / "sample.json",
             description_path= jd_path,
@@ -47,6 +49,7 @@ def main():
         jd_path.write_text(jd_text)
         print(f'Saved JD to {jd_path}')
         prompt =  Prompt(
+            prompt_template_dir=TEMPLATES_DIR,
             prompt_template_filename="prompt.j2",
             experience_path= DATA_DIR / "sample.json",
             description_path= jd_path,

@@ -3,7 +3,6 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 import datetime
 
-from config import FONTS_DIR
 
 BASE_DIR = Path(__file__).resolve().parent / "output"
 
@@ -19,15 +18,17 @@ def get_filename_counter(directory: Path, filename: str):
     return counter
 
 class Render:
-    def __init__(self, 
+    def __init__(self,
                 template_dir: Path,
                 template_filename: str,
+                css_dir: Path | None = None,
                 output_dir: Path | None = None,
                 output_filename: str | None = None
             ):
         # set up jinja
         self.jinja_env = Environment(loader=FileSystemLoader(template_dir))
         self.jinja_template = self.jinja_env.get_template(template_filename)
+        self.css_dir = css_dir
 
         # set up file management (html, pdf)
         self.output_dir = Path(output_dir) if output_dir else BASE_DIR
@@ -44,7 +45,8 @@ class Render:
         self.pdf_path = self.output_dir / f"{self.output_filename}.pdf"
 
     def to_html(self, data):
-        data["fonts_dir"] = FONTS_DIR.as_uri()
+        if self.css_dir:
+            data["fonts_dir"] = (self.css_dir).as_uri()
         html = self.jinja_template.render(**data)
         try:
             with open(file=self.html_path, mode='w') as file:

@@ -1,11 +1,11 @@
 from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
 
-from config import TEMPLATES_DIR
 from models import JobHistory
 
 class Prompt:
     def __init__(self,
+                prompt_template_dir: Path,
                 prompt_template_filename: str,
                 experience_path: Path,
                 description_path: Path,
@@ -16,7 +16,7 @@ class Prompt:
         self.description_path = description_path
         self.system_prompt_path = system_prompt_path
 
-        self.jinja_env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
+        self.jinja_env = Environment(loader=FileSystemLoader(str(prompt_template_dir)))
         self.jinja_template = self.jinja_env.get_template(prompt_template_filename)
 
     def generate_prompt(self):
