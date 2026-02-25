@@ -42,7 +42,7 @@ def main():
             prompt = Prompt(
                 prompt_template_dir=TEMPLATES_DIR,
                 prompt_template_filename="prompt.j2",
-                experience_path= DATA_DIR / "sample.json",
+                experience_path= DATA_DIR / "job_history.json",
                 description_path= DATA_DIR / "jobs" / args.jd_file,
                 system_prompt_path= TEMPLATES_DIR / "system_prompt.md"
             )
@@ -53,7 +53,7 @@ def main():
         prompt =  Prompt(
             prompt_template_dir=TEMPLATES_DIR,
             prompt_template_filename="prompt.j2",
-            experience_path= DATA_DIR / "sample.json",
+            experience_path= DATA_DIR / "job_history.json",
             description_path= jd_path,
             system_prompt_path= TEMPLATES_DIR / "system_prompt.md"
         )
@@ -67,7 +67,7 @@ def main():
         prompt =  Prompt(
             prompt_template_dir=TEMPLATES_DIR,
             prompt_template_filename="prompt.j2",
-            experience_path= DATA_DIR / "sample.json",
+            experience_path= DATA_DIR / "job_history.json",
             description_path= jd_path,
             system_prompt_path= TEMPLATES_DIR / "system_prompt.md"
         )

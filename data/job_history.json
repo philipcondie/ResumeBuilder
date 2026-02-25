@@ -1,0 +1,288 @@
+{
+  "general_information": "Candidate is transitioning from chemical/process engineering to software engineering. Currently working part-time as a software engineer at AddSalt (a AI receptionist for restaurants and event spaces) while completing an M.S. in Computer Science at Georgia Tech (online program, part-time alongside full-time Chevron role). Targeting full-time software engineering positions with more interest in backend and full stack work. School work has included course work in supervised learning, clustering and dimension reduction, neural nets (with pytorch) and reinforcement learning. Other courses have included operating systems with building a basic file transfer protocol and distributed file system.",
+  "skills": {
+    "languages": ["Python", "Go", "JavaScript", "SQL", "C/C++", "Java"],
+    "ml_ai": ["PyTorch", "scikit-learn", "LangGraph", "LangChain"],
+    "tools_frameworks": ["React", "REST APIs", "OAuth", "Docker", "PostgreSQL", "FastAPI"]
+  },
+  "job_history": [
+    {
+      "company": "AddSalt",
+      "job_title": "Software Engineer",
+      "start_date": "April 2025",
+      "end_date": "Present",
+      "experience_items": [
+        {
+          "text": "Developed a specialized LangGraph subagent in Python for customer phone number collection and verification. Required significant debugging to integrate subagent patterns into the existing system.",
+          "tags": ["python", "langgraph", "ai", "agents", "backend", "debugging"],
+          "category": "ai-engineering"
+        },
+        {
+          "text": "Designed and implemented a skill-based call routing system enabling an AI assistant to dynamically forward calls to department-specific phone numbers based on caller intent, replacing a single-number bottleneck. Each skill can be configured with its own forwarding number.",
+          "tags": ["system-design", "ai", "routing", "backend", "go"],
+          "category": "ai-engineering"
+        },
+        {
+          "text": "Building a multi-assistant system allowing multiple AI assistants per phone number and location, enabling time-based switching and streamlined test deployments.",
+          "tags": ["system-design", "backend", "go", "multi-tenancy", "architecture"],
+          "category": "backend"
+        },
+        {
+          "text": "Built an OAuth 2.0 service in Go to handle client-credentials token exchange, in-memory caching, and automatic refresh for a new third-party reservation platform integration.",
+          "tags": ["go", "oauth", "authentication", "api", "backend", "token-management"],
+          "category": "backend"
+        },
+        {
+          "text": "Developed a REST API client for a new reservation platform (Bookable), implementing service layer, tool calls, and OAuth integration end-to-end.",
+          "tags": ["go", "api", "rest", "integration", "backend"],
+          "category": "backend"
+        },
+        {
+          "text": "Refactored six reservation API handlers to support a redesigned integration architecture, improving extensibility for adding future reservation providers.",
+          "tags": ["go", "refactoring", "api", "architecture", "backend"],
+          "category": "backend"
+        },
+        {
+          "text": "Built a call log dashboard (React frontend, Go backend) integrating third-party APIs to retrieve and display call recordings and transcripts for customer support analysis.",
+          "tags": ["react", "go", "frontend", "dashboard", "api", "full-stack"],
+          "category": "full-stack"
+        },
+        {
+          "text": "Built customer configuration pages in React with Go backend services, including user management (add/remove users, search within org, assign to groups) and agent version toggling.",
+          "tags": ["react", "go", "frontend", "backend", "full-stack", "crud"],
+          "category": "full-stack"
+        },
+        {
+          "text": "Added analytics instrumentation to the Go backend, logging tool call events from the AI agent to an analytics endpoint for usage tracking.",
+          "tags": ["go", "analytics", "observability", "backend"],
+          "category": "backend"
+        }
+      ]
+    },
+    {
+      "company": "Chevron",
+      "job_title": "Technical Service Engineer",
+      "start_date": "June 2024",
+      "end_date": "Present",
+      "experience_items": [
+        {
+          "text": "Used predictive performance models to simulate multiple operating scenarios, evaluating system behavior to support optimization decisions.",
+          "tags": ["modeling", "simulation", "data-analysis", "optimization"],
+          "category": "modeling"
+        },
+        {
+          "text": "Analyzed large operational datasets to quantify system performance and produce data-driven recommendations for external clients.",
+          "tags": ["data-analysis", "client-facing", "reporting"],
+          "category": "data-analysis"
+        },
+        {
+          "text": "Acted as primary technical point of contact for client issues, diagnosing performance anomalies and validating model assumptions.",
+          "tags": ["client-facing", "troubleshooting", "technical-communication"],
+          "category": "client-engagement"
+        },
+        {
+          "text": "Produced regular performance reports analyzing catalyst system behavior over time, tracking degradation trends and flagging deviations from expected performance.",
+          "tags": ["data-analysis", "reporting", "monitoring", "trend-analysis"],
+          "category": "data-analysis"
+        },
+        {
+          "text": "Developed technical proposals for new catalyst system configurations, modeling expected performance to support client decision-making.",
+          "tags": ["modeling", "client-facing", "technical-writing", "proposals"],
+          "category": "client-engagement"
+        },
+        {
+          "text": "Traveled to client sites to support commissioning of new refinery units, validating system performance against design models during startup.",
+          "tags": ["deployment", "commissioning", "client-facing", "validation", "international"],
+          "category": "client-engagement"
+        }
+      ]
+    },
+    {
+      "company": "Chevron",
+      "job_title": "Process Design Engineer",
+      "start_date": "August 2022",
+      "end_date": "June 2024",
+      "experience_items": [
+        {
+          "text": "Built and optimized process simulation models for oil refinery processes to support client proposals and engineering design packages.",
+          "tags": ["simulation", "modeling", "optimization", "client-deliverables"],
+          "category": "modeling"
+        },
+        {
+          "text": "Served as lead engineer on an engineering design package, owning technical decisions and coordinating deliverables across disciplines.",
+          "tags": ["leadership", "project-ownership", "engineering-design", "cross-functional"],
+          "category": "leadership"
+        },
+        {
+          "text": "Supervised a team of 3 engineers, coordinating their work to meet project schedules and reviewing their work for accuracy.",
+          "tags": ["leadership", "team-management", "code-review-adjacent", "project-management"],
+          "category": "leadership"
+        },
+        {
+          "text": "Traveled to client site in India for construction walkdown, validating that as-built conditions matched engineering design specifications.",
+          "tags": ["client-facing", "deployment", "validation", "international"],
+          "category": "client-engagement"
+        },
+        {
+          "text": "Independently learned and applied multiple process design simulation tools (PRO/II, HTRI, KG-TOWER) to deliver project work.",
+          "tags": ["self-directed-learning", "simulation", "adaptability"],
+          "category": "modeling"
+        }
+      ]
+    },
+    {
+      "company": "Valero Energy Corporation",
+      "job_title": "Process Engineer / Control Systems Engineer",
+      "start_date": "Aug 2017",
+      "end_date": "June 2022",
+      "experience_items": [
+        {
+          "text": "Provided technical support for several refinery processing units including process monitoring, troubleshooting, and optimization.",
+          "tags": [
+            "process-engineering",
+            "troubleshooting",
+            "optimization",
+            "technical-support",
+            "operations"
+          ],
+          "category": "technical-support"
+        },
+        {
+          "text": "Built process models and analytics using plant data to track unit performance and improve profitability. Tools included Aspen IP21, OSISoft PI, Petro-Sim, HYSYS, and Excel.",
+          "tags": [
+            "data-analysis",
+            "process-modeling",
+            "analytics",
+            "aspen-ip21",
+            "osisoft-pi",
+            "petro-sim",
+            "hysys",
+            "excel",
+            "performance-tracking"
+          ],
+          "category": "data-analysis"
+        },
+        {
+          "text": "Transitioned to control systems department responsible for regulatory control implementation, process graphics maintenance, alarm management, and PI Asset Framework implementation.",
+          "tags": [
+            "control-systems",
+            "dcs",
+            "alarm-management",
+            "pi-asset-framework",
+            "process-controls"
+          ],
+          "category": "control-systems"
+        },
+        {
+          "text": "Organized trial run of catalyst additive and built spreadsheet tool to compile results and determine statistical significance of benefits against normal process and measurement variations.",
+          "tags": [
+            "data-analysis",
+            "experimentation",
+            "statistical-analysis",
+            "tool-building",
+            "decision-support",
+            "excel"
+          ],
+          "category": "data-analysis"
+        },
+        {
+          "text": "Troubleshot salting issues on FCC main fractionator by reviewing historical process data, equipment constraints, and improving predictive calculations. Presented findings and recommendations to management team which accepted the proposed path forward.",
+          "tags": [
+            "troubleshooting",
+            "root-cause-analysis",
+            "data-analysis",
+            "technical-communication",
+            "stakeholder-management"
+          ],
+          "category": "problem-solving"
+        },
+        {
+          "text": "Reduced cogeneration plant curtailments saving over $300,000 in a 40-day period by reconciling operating constraints with original equipment design.",
+          "tags": [
+            "cost-savings", 
+            "optimization", 
+            "troubleshooting", 
+            "constraint-analysis", 
+            "cogeneration"
+          ],
+          "category": "accomplishment-quantified"
+        },
+        {
+          "text": "Determined root cause for cogeneration plant downtimes and implemented improvements that decreased required maintenance frequency by 50%, saving $125,000 per year in reduced downtime.",
+          "tags": [
+            "root-cause-analysis", 
+            "reliability", 
+            "cost-savings", 
+            "process-improvement", 
+            "maintenance-optimization"
+          ],
+          "category": "accomplishment-quantified"
+        },
+        {
+          "text": "Identified modifications to water demineralization system saving $385,000 annually by increasing system capacity, offsetting rental equipment cost, and reducing chemical usage.",
+          "tags": [
+            "cost-savings", 
+            "process-improvement", 
+            "capacity-optimization", 
+            "system-design"
+          ],
+          "category": "accomplishment-quantified"
+        },
+        {
+          "text": "Resolved propane product quality issues and enabled continued propane sales by developing short- and long-term solutions. Created monitoring tool to prevent future product quality issues.",
+          "tags": [
+            "troubleshooting", 
+            "quality-assurance", 
+            "tool-building", 
+            "monitoring", 
+            "problem-solving"
+          ],
+          "category": "problem_solving"
+        },
+        {
+          "text": "Managed data reconciliation tool for economic analysis of refinery production. Automated Excel tool with VBA to collect process information to identify issues with distillation column operation.",
+          "tags": [
+            "data-analysis",
+            "vba",
+            "excel",
+            "automation",
+            "economic-analysis"
+          ],
+          "category": "data-analysis"
+        },
+        {
+          "text": "Configured data analysis tools in the PI Asset Framework system to improve process monitoring. Built conditional events to trigger deeper analysis of troublesome furnace operation.",
+          "tags": [
+            "pi-asset-framework",
+            "monitoring",
+            "data-analysis",
+            "automation",
+            "event-driven"
+          ],
+          "category": "control-systems"
+        },
+        {
+          "text": "Refactored VBA program that read third-party lab data to generate report for lab personnel. Required reading the program documentation to expand the functionality of several modules.",
+          "tags": [
+            "vba",
+            "refactoring",
+            "documentation",
+            "automation",
+            "reporting"
+          ],
+          "category": "software-development"
+        },
+        {
+          "text": "Developed and maintained control strategies on Honeywell distributed control system (DCS). Included programming custom control and data acquisition modules.",
+          "tags": [
+            "control-systems",
+            "dcs",
+            "programming",
+            "data-acquisition"
+          ],
+          "category": "control-systems"
+        }
+      ]
+    }
+  ]
+}
