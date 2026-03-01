@@ -1,6 +1,6 @@
 __pycache__/
 .venv/
-data/jobs/
+data/
 output/
 templates/
 archive/
